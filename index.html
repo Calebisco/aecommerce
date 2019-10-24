@@ -1,0 +1,661 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>Ecommerce with AE</title>
+
+  <meta name="keywords" content="Ecommerce with AE">
+  <meta name="description" content="Ecommerce with AEternity Blockchain, Pay with Cryptocurrency">
+  <meta name="author" content="Ogaenyi Caleb">
+          
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="assets/css/style.min.css">
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .cart-header {
+      font-weight: bold;
+      font-size: 1.25em;
+      color: #333;
+    }
+
+    .cart-column {
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid black;
+      margin-right: 1.5em;
+      padding-bottom: 10px;
+      margin-top: 10px;
+    }
+
+    .cart-row {
+      display: flex;
+    }
+
+    .cart-item {
+      width: 45%;
+    }
+
+    .cart-price {
+      width: 20%;
+      font-size: 1.2em;
+      color: #333;
+    }
+
+    .cart-quantity {
+      width: 35%;
+    }
+
+    .cart-item-title {
+      color: #333;
+      margin-left: .5em;
+      font-size: 1.2em;
+    }
+
+    .cart-item-image {
+      width: 75px;
+      height: auto;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="page-wrapper">
+    <header class="header">
+      <div class="header-top">
+        <div class="container">
+            <div class="header-left header-dropdowns"></div><!-- End .header-right -->
+        </div><!-- End .container -->
+      </div><!-- End .header-top -->
+      <div class="header-middle">
+        <div class="container">
+          <div class="header-left">
+            <a href="index.html" class="logo">
+              <h2>AECOMMERCE</h2> 
+            </a>
+          </div><!-- End .header-left -->
+
+          <div class="header-center">
+            <div class="header-search">
+              <a href="#" class="search-toggle" role="button"><i class="icon-magnifier"></i></a>
+              <form action="#" method="get">
+                <div class="header-search-wrapper">
+                  <input type="search" class="form-control" name="q" id="q" placeholder="Search..." required="">
+                  <div class="select-custom">
+                    <select id="cat" name="cat">
+                      <option>All Categories</option>
+                      <option>Fashion</option>
+                      <option>- Women</option>
+                      <option>- Men</option>
+                      <option>- Jewellery</option>
+                      <option>- Kids Fashion</option>
+                      <option>Electronics</option>
+                      <option>- Smart TVs</option>
+                      <option>- Cameras</option>
+                      <option>- Games</option>
+                      <option>Home &amp; Garden</option>
+                      <option>Motors</option>
+                      <option>- Cars and Trucks</option>
+                      <option>- Motorcycles &amp; Powersports</option>
+                      <option>- Parts &amp; Accessories</option>
+                      <option>- Boats</option>
+                      <option>- Auto Tools &amp; Supplies</option>
+                    </select>
+                  </div><!-- End .select-custom -->
+                  <button class="btn" type="submit"><i class="icon-magnifier"></i></button>
+                </div><!-- End .header-search-wrapper -->
+              </form>
+            </div><!-- End .header-search -->
+          </div><!-- End .headeer-center -->
+
+          <div class="header-right">
+            <button class="mobile-menu-toggler" type="button">
+              <i class="icon-menu"></i>
+            </button>
+            <div class="header-contact">
+              <span>Call us now</span>
+              <a href="tel:+2347066934652"><strong>+2347066934652</strong></a>
+            </div><!-- End .header-contact -->
+                  
+            <div class="dropdown cart-dropdown">
+              <a href="#cart" class="dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
+                <span class="cart-count"></span>
+              </a>
+              <div class="dropdown-menu">
+                <div class="dropdownmenu-wrapper">
+                  <div class="dropdown-cart-header">
+                    <a href="#cart">View Cart</a>
+                  </div><!-- End .dropdown-cart-header -->
+                  <div class="dropdown-cart-action">
+                    <a href="#cart" class="btn btn-block">Checkout</a>
+                  </div><!-- End .dropdown-cart-total -->
+                </div><!-- End .dropdownmenu-wrapper -->
+              </div><!-- End .dropdown-menu -->
+            </div><!-- End .dropdown -->
+          </div><!-- End .header-right -->
+        </div><!-- End .container -->
+      </div><!-- End .header-middle -->
+
+      <div class="header-bottom sticky-header">
+        <div class="container">
+          <nav class="main-nav">
+            <ul class="menu sf-arrows">
+              <li class="active"><a href="index.html">Home</a></li>
+              <li><a href="#">Categories</a></li>
+              <li><a href="#">Products</a></li>
+            </ul>
+          </nav>
+        </div><!-- End .header-bottom -->
+      </div><!-- End .header-bottom -->
+    </header><!-- End .header -->
+    <main class="main">
+      <div class="banner banner-cat" style="background-image: url('assets/images/banners/banner-top.jpg');">
+        <div class="banner-content container">
+          <h2 class="banner-subtitle">check out over <span>200+</span></h2>
+          <h1 class="banner-title">
+              INCREDIBLE deals
+          </h1>
+          <a href="#" class="btn btn-primary">Shop Now</a>
+        </div><!-- End .banner-content -->
+      </div><!-- End .banner -->
+        
+      <nav aria-label="breadcrumb" class="breadcrumb-nav">
+        <div class="container">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item"><a href="#">Men</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Accessories</li>
+          </ol>
+        </div><!-- End .container -->
+      </nav>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-9">
+            <nav class="toolbox">
+              <div class="toolbox-left">
+                <div class="toolbox-item toolbox-sort">
+                  <div class="select-custom">
+                    <select name="orderby" class="form-control">
+                      <option value="menu_order" selected="selected">Default sorting</option>
+                      <option value="popularity">Sort by popularity</option>
+                      <option value="rating">Sort by average rating</option>
+                      <option value="date">Sort by newness</option>
+                      <option value="price">Sort by price: low to high</option>
+                      <option value="price-desc">Sort by price: high to low</option>
+                    </select>
+                  </div><!-- End .select-custom -->
+                  <a href="#" class="sorter-btn" title="Set Ascending Direction"><span class="sr-only">Set Ascending Direction</span></a>
+                </div><!-- End .toolbox-item -->
+              </div><!-- End .toolbox-left -->
+
+              <div class="toolbox-item toolbox-show">
+                <label>Showing 1–9 of 60 results</label>
+              </div><!-- End .toolbox-item -->
+
+              <div class="layout-modes">
+                <a href="" class="layout-btn btn-grid active" title="Grid">
+                    <i class="icon-mode-grid"></i>
+                </a>
+                <a href="" class="layout-btn btn-list" title="List">
+                    <i class="icon-mode-list"></i>
+                </a>
+              </div><!-- End .layout-modes -->
+            </nav>
+                    
+            <div class="row row-sm">
+              <div class="col-6 col-md-4 col-xl-3">
+                <div class="shop-item">
+                  <img class="shop-item-image" src="assets/images/products/product-8.jpg">
+                  <div class="shop-item-details">
+                    <h2>  <span class="shop-item-title">White Face Cap</span></h2><br>
+                    <span class="shop-item-price product-price">14æ</span>
+                    <button class="btn btn-primary shop-item-button"type="button">ADD TO CART</button>
+                  </div>
+                </div>
+              </div><!-- End .col-xl-3 -->
+
+              <div class="col-6 col-md-4 col-xl-3">
+                <div class="shop-item">
+                  <img class="shop-item-image" src="assets/images/products/product-1.jpg">
+                  <div class="shop-item-details">
+                    <h2>  <span class="shop-item-title">Face Cap</span></h2><br>
+                    <span class="shop-item-price product-price">10æ</span>
+                    <button class="btn btn-primary shop-item-button"type="button">ADD TO CART</button>
+                  </div>
+                </div>
+              </div><!-- End .col-xl-3 -->
+
+              <div class="col-6 col-md-4 col-xl-3">
+                <div class="shop-item">
+                  <img class="shop-item-image" src="assets/images/products/product-2.jpg">
+                  <div class="shop-item-details">
+                    <h2>  <span class="shop-item-title">Dress Shoe</span></h2><br>
+                    <span class="shop-item-price product-price">78æ</span>
+                    <button class="btn btn-primary shop-item-button"type="button">ADD TO CART</button>
+                  </div>
+                </div>
+              </div><!-- End .col-xl-3 -->
+
+              <div class="col-6 col-md-4 col-xl-3">
+                <div class="shop-item">
+                  <img class="shop-item-image" src="assets/images/products/product-3.jpg">
+                  <div class="shop-item-details">
+                    <h2>  <span class="shop-item-title">Leather Belt</span></h2><br>
+                    <span class="shop-item-price product-price">10æ</span>
+                    <button class="btn btn-primary shop-item-button"type="button">ADD TO CART</button>
+                  </div>
+                </div>
+              </div><!-- End .col-xl-3 -->
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-6 col-md-4 col-xl-3">
+                <div class="shop-item">
+                  <img class="shop-item-image" src="assets/images/products/product-4.jpg">
+                  <div class="shop-item-details">
+                    <h2>  <span class="shop-item-title">Ratchet  Belt</span></h2><br>
+                    <span class="shop-item-price product-price">14æ</span>
+                    <button class="btn btn-primary shop-item-button"type="button">ADD TO CART</button>
+                  </div>
+                </div>
+              </div><!-- End .col-xl-3 -->
+
+              <div class="col-6 col-md-4 col-xl-3">
+                <div class="shop-item">
+                  <img class="shop-item-image" src="assets/images/products/product-5.jpg">
+                  <div class="shop-item-details">
+                    <h2>  <span class="shop-item-title">Shoe Black</span></h2><br>
+                    <span class="shop-item-price product-price">22æ</span>
+                    <button class="btn btn-primary shop-item-button"type="button">ADD TO CART</button>
+                  </div>
+                </div>
+              </div><!-- End .col-xl-3 -->
+
+              <div class="col-6 col-md-4 col-xl-3">
+                <div class="shop-item">
+                  <img class="shop-item-image" src="assets/images/products/product-6.jpg">
+                  <div class="shop-item-details">
+                    <h2>  <span class="shop-item-title">Training Shoe</span></h2><br>
+                    <span class="shop-item-price product-price">11æ</span>
+                    <button class="btn btn-primary shop-item-button"type="button">ADD TO CART</button>
+                  </div>
+                </div>
+              </div><!-- End .col-xl-3 -->
+              <br>
+
+              <div class="col-6 col-md-4 col-xl-3">
+                <div class="shop-item">
+                  <img class="shop-item-image" src="assets/images/products/product-9.jpg">
+                  <div class="shop-item-details">
+                    <h2>  <span class="shop-item-title">Shoe</span></h2><br>
+                    <span class="shop-item-price product-price">12æ</span>
+                    <button class="btn btn-primary shop-item-button"type="button">ADD TO CART</button>
+                  </div>
+                </div>
+              </div><!-- End .col-xl-3 -->                            
+            </div><!-- End .row -->
+
+            <nav class="toolbox toolbox-pagination">
+              <div class="toolbox-item toolbox-show">
+                <label>Showing 1–9 of 60 results</label>
+              </div><!-- End .toolbox-item -->
+
+              <ul class="pagination">
+                <li class="page-item disabled">
+                  <a class="page-link page-link-btn" href="#"><i class="icon-angle-left"></i></a>
+                </li>
+                <li class="page-item active">
+                  <a class="page-link" href="#">1 <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#">4</a></li>
+                <li class="page-item"><span>...</span></li>
+                <li class="page-item"><a class="page-link" href="#">15</a></li>
+                <li class="page-item">
+                  <a class="page-link page-link-btn" href="#"><i class="icon-angle-right"></i></a>
+                </li>
+              </ul>
+            </nav>
+            <div id=cart>
+              <section class="container content-section">
+                <h2 class="section-header">CART</h2>
+                <div class="cart-row">
+                  <span class="cart-item cart-header cart-column">ITEM</span>
+                  <span class="cart-price cart-header cart-column">PRICE</span>
+                  <span class="cart-quantity cart-header cart-column">QUANTITY</span>
+                </div>
+                <div class="cart-items"></div>
+                <div class="cart-total">
+                  <strong class="cart-total-title">Total</strong>
+                  <span class="cart-total-price">0æ<span>
+                </div>
+                <button class="btn btn-primary btn-purchase" type="button">PURCHASE</button>
+              </section>
+            </div>   
+          </div><!-- End .col-lg-9 -->
+          <!-- The Modal -->
+          <div class="modal" id="myModal">
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+              <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                  <h4 class="modal-title">Processing Order</h4>
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <!-- Modal body -->
+                <div class="col-lg-12">
+                  <ul class="checkout-steps">
+                    <li>
+                      <h2 class="step-title">Shipping Address</h2>
+                      <form action="#">
+                        <div class="form-group required-field">
+                          <label>Email Address </label>
+                          <div class="form-control-tooltip">
+                            <input type="email" class="form-control" required="">
+                            <span class="input-tooltip" data-toggle="tooltip" title="We'll send your order confirmation here." data-placement="right"><i class="icon-question-circle"></i></span>
+                          </div><!-- End .form-control-tooltip -->
+                        </div><!-- End .form-group -->
+
+                        <div class="form-group required-field">
+                          <label>Password </label>
+                          <input type="password" class="form-control" required="">
+                        </div><!-- End .form-group -->
+                        <p>You already have an account with us. Sign in or continue as guest.</p>
+                        <div class="form-footer">
+                          <button type="submit" class="btn btn-primary">LOGIN</button>
+                          <a href="#" class="forget-pass"> Forgot your password?</a>
+                        </div><!-- End .form-footer -->
+                      </form>
+                      <form action="#">
+                        <div class="form-group required-field">
+                          <label>First Name </label>
+                          <input type="text" class="form-control" required="">
+                        </div><!-- End .form-group -->
+
+                        <div class="form-group required-field">
+                          <label>Last Name </label>
+                          <input type="text" class="form-control" required="">
+                        </div><!-- End .form-group -->
+
+                        <div class="form-group">
+                          <label>Company </label>
+                          <input type="text" class="form-control">
+                        </div><!-- End .form-group -->
+
+                        <div class="form-group required-field">
+                          <label>Street Address </label>
+                          <input type="text" class="form-control" required="">
+                          <input type="text" class="form-control" required="">
+                        </div><!-- End .form-group -->
+
+                        <div class="form-group required-field">
+                          <label>City  </label>
+                          <input type="text" class="form-control" required="">
+                        </div><!-- End .form-group -->
+
+                        <div class="form-group">
+                          <label>State/Province</label>
+                          <input type="text" class="form-control" required="">
+                        </div><!-- End .form-group -->
+
+                        <div class="form-group required-field">
+                          <label>Zip/Postal Code </label>
+                          <input type="text" class="form-control" required="">
+                        </div><!-- End .form-group -->
+
+                        <div class="form-group">
+                          <label>Country</label>
+                          <input type="text" class="form-control" required="">
+                        </div><!-- End .form-group -->
+
+                        <div class="form-group required-field">
+                          <label>Phone Number </label>
+                          <div class="form-control-tooltip">
+                            <input type="tel" class="form-control" required="">
+                            <span class="input-tooltip" data-toggle="tooltip" title="For delivery questions." data-placement="right"><i class="icon-question-circle"></i></span>
+                          </div><!-- End .form-control-tooltip -->
+                        </div><!-- End .form-group -->
+                      </form>
+                      <button class="btn btn-primary btn-purchase" type="button" >PURCHASE</button>
+                    </li>
+                  </ul>
+                </div><!-- End .col-lg-8 -->
+                
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <aside class="sidebar-shop col-lg-3 order-lg-first">
+            <div class="sidebar-wrapper">
+              <div class="widget">
+                <h3 class="widget-title">
+                  <a data-toggle="collapse" href="#widget-body-2" role="button" aria-expanded="true" aria-controls="widget-body-2">Men</a>
+                </h3>
+                <div class="collapse show" id="widget-body-2">
+                  <div class="widget-body">
+                    <ul class="cat-list">
+                      <li><a href="#">Accessories</a></li>
+                      <li><a href="#">Watch Fashion</a></li>
+                      <li><a href="#">Tees, Knits & Polos</a></li>
+                      <li><a href="#">Pants & Denim</a></li>
+                    </ul>
+                  </div><!-- End .widget-body -->
+                </div><!-- End .collapse -->
+              </div><!-- End .widget -->
+
+              <div class="widget">
+                <h3 class="widget-title">
+                  <a data-toggle="collapse" href="#widget-body-3" role="button" aria-expanded="true" aria-controls="widget-body-3">Price</a>
+                </h3>
+
+                <div class="collapse show" id="widget-body-3">
+                  <div class="widget-body">
+                    <form action="#">
+                      <div class="price-slider-wrapper">
+                        <div id="price-slider"></div><!-- End #price-slider -->
+                      </div><!-- End .price-slider-wrapper -->
+
+                      <div class="filter-price-action">
+                        <button type="submit" class="btn btn-primary">Filter</button>
+                        <div class="filter-price-text">
+                          Price: <span id="filter-price-range"></span>
+                        </div><!-- End .filter-price-text -->
+                      </div><!-- End .filter-price-action -->
+                    </form>
+                  </div><!-- End .widget-body -->
+                </div><!-- End .collapse -->
+              </div><!-- End .widget -->
+
+              <div class="widget">
+                <h3 class="widget-title">
+                  <a data-toggle="collapse" href="#widget-body-4" role="button" aria-expanded="true" aria-controls="widget-body-4">Size</a>
+                </h3>
+
+                <div class="collapse show" id="widget-body-4">
+                  <div class="widget-body">
+                    <ul class="cat-list">
+                        <li><a href="#">Small</a></li>
+                        <li><a href="#">Medium</a></li>
+                        <li><a href="#">Large</a></li>
+                        <li><a href="#">Extra Large</a></li>
+                    </ul>
+                  </div><!-- End .widget-body -->
+                </div><!-- End .collapse -->
+              </div><!-- End .widget -->
+
+              <div class="widget">
+                <h3 class="widget-title">
+                  <a data-toggle="collapse" href="#widget-body-5" role="button" aria-expanded="true" aria-controls="widget-body-5">Brand</a>
+                </h3>
+
+                <div class="collapse show" id="widget-body-5">
+                  <div class="widget-body">
+                    <ul class="cat-list">
+                      <li><a href="#">Adidas</a></li>
+                      <li><a href="#">Calvin Klein (26)</a></li>
+                      <li><a href="#">Diesel (3)</a></li>
+                      <li><a href="#">Lacoste (8)</a></li>
+                    </ul>
+                  </div><!-- End .widget-body -->
+                </div><!-- End .collapse -->
+              </div><!-- End .widget -->
+
+              <div class="widget">
+                <h3 class="widget-title">
+                  <a data-toggle="collapse" href="#widget-body-6" role="button" aria-expanded="true" aria-controls="widget-body-6">Color</a>
+                </h3>
+                <div class="collapse show" id="widget-body-6">
+                  <div class="widget-body">
+                    <ul class="config-swatch-list">
+                      <li class="active">
+                        <a href="#">
+                          <span class="color-panel" style="background-color: #1645f3;"></span>
+                          <span>Blue</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <span class="color-panel" style="background-color: #f11010;"></span>
+                          <span>Red</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <span class="color-panel" style="background-color: #fe8504;"></span>
+                          <span>Orange</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <span class="color-panel" style="background-color: #2da819;"></span>
+                          <span>Green</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div><!-- End .widget-body -->
+                </div><!-- End .collapse -->
+              </div><!-- End .widget -->
+            </div><!-- End .sidebar-wrapper -->
+          </aside><!-- End .col-lg-3 -->
+        </div><!-- End .row -->
+      </div><!-- End .container -->
+      <div class="mb-5"></div><!-- margin -->
+    </main><!-- End .main -->
+
+    <footer class="footer">
+      <div class="footer-middle">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-2 col-md-6">
+              <div class="widget">
+                <h4 class="widget-title">My Account</h4>
+                <ul class="links">
+                  <li><a href="#">About Us</a></li>
+                  <li><a href="#">Contact Us</a></li>
+                  <li><a href="#">My Account</a></li>
+                  <li><a href="#">Orders History</a></li>
+                  <li><a href="#">Advanced Search</a></li>
+                  <li><a href="#" class="login-link">Login</a></li>
+                </ul>
+              </div><!-- End .widget -->
+            </div><!-- End .col-lg-2 -->
+
+            <div class="col-lg-3 col-md-6">
+              <div class="widget">
+                <h4 class="widget-title">Main Features</h4>
+                
+                <ul class="links">
+                  <li><a href="#">Pay with AETERNITY </a></li>
+                </ul>
+              </div><!-- End .widget -->
+            </div><!-- End .col-lg-3 -->
+
+            <div class="col-lg-5 col-md-6">
+              <div class="widget widget-newsletter">
+                <h4 class="widget-title">Subscribe newsletter</h4>
+                <p>Get all the latest information on Events,Sales and Offers. Sign up for newsletter today</p>
+                <form action="#">
+                  <input type="email" class="form-control" placeholder="Email address" required="">
+
+                  <button type="submit" class="btn">Subscribe<i class="icon-angle-right"></i></button>
+                </form>
+              </div><!-- End .widget -->
+            </div><!-- End .col-lg-5 -->
+
+            <div class="col-lg-4 col-md-6">
+              <div class="widget">
+                <ul class="contact-info">
+                  <li>
+                    <span class="contact-info-label">Address:</span>Techub Eksu, Eksu, Ekiti State. Nigeria
+                  </li>
+                  <li>
+                    <span class="contact-info-label">Phone:</span>Toll Free <a href="tel:">+2347066934652</a>
+                  </li>
+                  <li>
+                    <span class="contact-info-label">Email:</span> <a href="#">ogaenyi.caleb@gmail.com</a>
+                  </li>
+                  <li>
+                    <span class="contact-info-label">Working Days/Hours:</span>
+                    Mon - Sun / 9:00AM - 8:00PM
+                  </li>
+                </ul>
+              </div><!-- End .widget -->
+            </div><!-- End .col-lg-4 -->
+          </div><!-- End .row -->
+        </div><!-- End .container -->
+      </div><!-- End .footer-middle -->
+
+      <div class="container">
+        <div class="footer-bottom">
+          <p class="footer-copyright">AECOMMERCE  2019.  All Rights Reserved</p>
+          <div class="social-icons">
+            <a href="#" class="social-icon" target="_blank"><i class="icon-facebook"></i></a>
+            <a href="#" class="social-icon" target="_blank"><i class="icon-twitter"></i></a>
+            <a href="#" class="social-icon" target="_blank"><i class="icon-linkedin"></i></a>
+          </div><!-- End .social-icons -->
+        </div><!-- End .footer-bottom -->
+      </div><!-- End .containr -->
+    </footer><!-- End .footer -->
+  </div><!-- End .page-wrapper -->
+
+  <div class="mobile-menu-overlay"></div><!-- End .mobil-menu-overlay -->
+
+  <div class="mobile-menu-container">
+    <div class="mobile-menu-wrapper">
+      <span class="mobile-menu-close"><i class="icon-cancel"></i></span>
+      <nav class="mobile-nav">
+        <ul class="mobile-menu">
+          <li class="active"><a href="index.html">Home</a></li>
+          <li class="megamenu-container"><a href="#" class="sf-with-ul">Categories</a></li>
+          <li class="megamenu-container"><a href="#" class="sf-with-ul">Products</a> </li>
+        </ul>
+      </nav><!-- End .mobile-nav -->
+
+      <div class="social-icons">
+        <a href="#" class="social-icon" target="_blank"><i class="icon-facebook"></i></a>
+        <a href="#" class="social-icon" target="_blank"><i class="icon-twitter"></i></a>
+        <a href="#" class="social-icon" target="_blank"><i class="icon-instagram"></i></a>
+      </div><!-- End .social-icons -->
+    </div><!-- End .mobile-menu-wrapper -->
+  </div><!-- End .mobile-menu-container -->
+
+  <a id="scroll-top" href="#top" title="Top" role="button"><i class="icon-angle-up"></i></a>
+
+  <script src="https://unpkg.com/@aeternity/aepp-sdk/dist/aepp-sdk.browser-script.js"></script>  
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/plugins.min.js"></script>
+  <script src="assets/js/main.min.js"></script>
+  <script src="store.js" async></script>
+</body>
+</html>
