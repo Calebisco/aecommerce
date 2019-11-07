@@ -1,2 +1,4 @@
-# aecommerce
-aecommerce
+Maybe, the best thing about cryptocurrency is a decentralized exchange. This means that a single authority, be it a bank or any financial corporation, does not control the process. Instead, all payments are regulated by blockchain, an advanced database that stores, displays, protects, and transfers money.
+Operations are controlled by smart contracts technology that allows users to exchange money and other values transparently without any services of the third parties. All obligations are enforced automatically, so there is no room for cheating.  
+Cryptography also serves to protect the system from hackers and thieves, since all the transactions are connected and cannot be changed manually. It is impossible to sneak into the network and transform the data because of complicated security algorithms that cannot be broken by a human being.
+After  evaluating the advantages of Aeternity, AECOMMERCE was built which has higher advantages than the normal e-commerce platforms
