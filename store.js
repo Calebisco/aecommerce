@@ -75,7 +75,8 @@ async function purchaseClicked() {
   updateCartTotal();
   
   client = await Ae.Aepp();
-  await contractCall('registerPurchase',[ total], total*1000000000000000000);
+  console.log("The total is ",total);
+  await contractCall('registerPurchase',[total], total*1000000000000000000);
 
   alert('Thank you for your purchase')
 }
