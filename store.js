@@ -29,7 +29,7 @@ contract AeCommerce =
     state.purchasesLength
 `;
 
-const contractAddress = 'ct_2VSmSX2AkCzXTHm1LSTRK9496HeCTyaXM8D2V3BtmGU5F9FGS1';
+const contractAddress = 'ct_s3komLvSKPyWBMB5uMnMEGk2rNaB2AVfcbb6dHMYaEurV5qUC ';
 var client = null;
 var total = 0;
 
@@ -141,6 +141,7 @@ function updateCartTotal() {
     var quantityElement = cartRow.getElementsByClassName('cart-quantity-input')[0]
     var price = parseFloat(priceElement.innerText.replace('', ''))
     var quantity = quantityElement.value
+    console.log(price);
     total = total + (price * quantity)
   }
   total = Math.round(total * 100) / 100
