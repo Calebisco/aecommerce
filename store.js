@@ -19,7 +19,8 @@ contract AeCommerce =
       None    => abort("There was no purchase with this index registered.")
       Some(x) => x
       
-  stateful entrypoint registerPurchase(amount' : int) =
+  payable stateful entrypoint registerPurchase(amount' : int) =
+    Chain.spend(ak_2bKhoFWgQ9os4x8CaeDTHZRGzUcSwcXYUrM12gZHKTdyreGRgG,Call.value)
     let purchase = { buyerAddress = Call.caller, amount = amount'}
     let index = getPurchasesLength() + 1
     put(state{ purchases[index] = purchase, purchasesLength = index })
