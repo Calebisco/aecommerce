@@ -29,7 +29,7 @@ contract AeCommerce =
     state.purchasesLength
 `;
 
-const contractAddress = 'ct_s3komLvSKPyWBMB5uMnMEGk2rNaB2AVfcbb6dHMYaEurV5qUC ';
+const contractAddress = 'ct_s3komLvSKPyWBMB5uMnMEGk2rNaB2AVfcbb6dHMYaEurV5qUC';
 var client = null;
 var total = 0;
 
