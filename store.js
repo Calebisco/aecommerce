@@ -19,7 +19,8 @@ contract AeCommerce =
       None    => abort("There was no purchase with this index registered.")
       Some(x) => x
       
-  stateful entrypoint registerPurchase(amount' : int) =
+  payable stateful entrypoint registerPurchase(amount' : int) =
+    Chain.spend(ak_2bKhoFWgQ9os4x8CaeDTHZRGzUcSwcXYUrM12gZHKTdyreGRgG,Call.value)
     let purchase = { buyerAddress = Call.caller, amount = amount'}
     let index = getPurchasesLength() + 1
     put(state{ purchases[index] = purchase, purchasesLength = index })
@@ -28,7 +29,7 @@ contract AeCommerce =
     state.purchasesLength
 `;
 
-const contractAddress = 'ct_2VSmSX2AkCzXTHm1LSTRK9496HeCTyaXM8D2V3BtmGU5F9FGS1';
+const contractAddress = 'ct_s3komLvSKPyWBMB5uMnMEGk2rNaB2AVfcbb6dHMYaEurV5qUC';
 var client = null;
 var total = 0;
 
@@ -74,7 +75,8 @@ async function purchaseClicked() {
   updateCartTotal();
   
   client = await Ae.Aepp();
-  await contractCall('registerPurchase', total, total);
+  console.log("The total is ",total);
+  await contractCall('registerPurchase',[total], total*1000000000000000000);
 
   alert('Thank you for your purchase')
 }
@@ -140,6 +142,7 @@ function updateCartTotal() {
     var quantityElement = cartRow.getElementsByClassName('cart-quantity-input')[0]
     var price = parseFloat(priceElement.innerText.replace('', ''))
     var quantity = quantityElement.value
+    console.log(price);
     total = total + (price * quantity)
   }
   total = Math.round(total * 100) / 100
